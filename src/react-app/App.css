@@ -53,14 +53,16 @@ html.light .mode-toggle {
   transform: translateX(-50%);
 
   display: flex;
-  justify-content: center; /* center buttons */
+  justify-content: center;
   align-items: center;
-  gap: 16px;               /* spacing between buttons */
+  gap: 16px;               /* space between buttons */
 
-  width: auto;             /* shrink to fit buttons */
-  padding: 14px 20px;
+  max-width: 350px;        /* prevent dock from stretching too wide */
+  min-width: 220px;        /* ensure dock doesn’t shrink too small */
+  width: fit-content;      /* shrink to fit buttons exactly */
+  padding: 14px 16px;
+
   border-radius: 30px;
-
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
@@ -79,7 +81,7 @@ html.light .floating-dock {
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Dock Buttons */
+/* Buttons */
 .dock-btn {
   width: 48px;
   height: 48px;
