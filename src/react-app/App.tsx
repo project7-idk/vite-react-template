@@ -8,7 +8,7 @@ function App() {
   );
 
   useEffect(() => {
-    document.body.className = mode;
+    document.documentElement.className = mode;
     localStorage.setItem("mode", mode);
   }, [mode]);
 
