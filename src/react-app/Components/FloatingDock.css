@@ -1,42 +1,51 @@
 /* src/components/FloatingDock.css */
-.floating-dock-wrapper {
+.floating-dock {
   position: fixed;
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 999;
-}
 
-.floating-dock {
-  pointer-events: all;
-  display: inline-flex; /* shrink to content */
-  gap: 14px; /* spacing between buttons */
-  padding: 12px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;               /* space between buttons */
+
+  max-width: 350px;        /* prevent dock from stretching too wide */
+  min-width: 220px;        /* ensure dock doesn’t shrink too small */
+  width: fit-content;      /* shrink to fit buttons exactly */
+  padding: 14px 16px;
+
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
+
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.35),
     0 2px 6px rgba(255, 255, 255, 0.2) inset;
+
+  z-index: 999;
 }
 
+/* Light Mode */
 html.light .floating-dock {
-  background: rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+/* Buttons */
 .dock-btn {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-size: 1.5rem;
   color: white;
   background: rgba(255, 255, 255, 0.25);
@@ -46,26 +55,19 @@ html.light .floating-dock {
 }
 
 html.light .dock-btn {
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
   color: black;
 }
 
 .dock-btn:hover {
-  transform: scale(1.15) translateY(-2px);
+  transform: scale(1.18) translateY(-3px);
 }
 
 .dock-btn.upload {
   font-size: 1.6rem;
-  background: rgba(128,128,128,0.35);
+  background: rgba(128, 128, 128, 0.35);
 }
 
 .dock-btn.upload:hover {
-  background: rgba(128,128,128,0.55);
-}
-
-.profile-btn img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+  background: rgba(128, 128, 128, 0.55);
 }
