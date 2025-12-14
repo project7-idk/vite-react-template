@@ -22,7 +22,16 @@ function App() {
       </button>
 
       <h1>Project7</h1>
-      <p>Welcome to your helper</p>
+      <p>Welcome to your study helper</p>
+      {/* Floating Dock */}
+<div className="floating-dock">
+  <button className="dock-btn">🏠</button>
+  <button className="dock-btn">📅</button>
+  <button className="dock-btn upload">＋</button>
+  <button className="dock-btn">💬</button>
+  <button className="dock-btn">⚙️</button>
+</div>
+
     </div>
   );
 }
