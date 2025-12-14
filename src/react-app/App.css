@@ -1,23 +1,22 @@
-html {
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   transition: background-color 0.4s, color 0.4s;
 }
 
-html.dark {
+/* Modes */
+body.dark {
   background: #000;
   color: #fff;
 }
 
-html.light {
+body.light {
   background: #fff;
   color: #000;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* App layout */
+/* Layout */
 .app {
   min-height: 100vh;
   display: flex;
@@ -27,7 +26,18 @@ body {
   text-align: center;
 }
 
-/* Toggle */
+/* Text */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Toggle button */
 .mode-toggle {
   position: fixed;
   top: 16px;
@@ -40,8 +50,13 @@ body {
   font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
+  transition: transform 0.2s, background 0.3s;
 }
 
-html.light .mode-toggle {
+body.light .mode-toggle {
   background: rgba(0, 0, 0, 0.15);
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
 }
