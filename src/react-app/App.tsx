@@ -22,7 +22,7 @@ function App() {
       </button>
 
       <h1>Project7</h1>
-      <p>Welcome to your study helper</p>
+      <p>Welcome to your helper</p>
     </div>
   );
 }
