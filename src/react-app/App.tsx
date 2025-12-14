@@ -1,5 +1,5 @@
-// src/App.tsx
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import FloatingDock from "./components/FloatingDock";
 import "./App.css";
 
 function App() {
@@ -23,15 +23,16 @@ function App() {
 
       <h1>Project7</h1>
       <p>Welcome to your study helper</p>
-      {/* Floating Dock */}
-<div className="floating-dock">
-  <button className="dock-btn">🏠</button>
-  <button className="dock-btn">📅</button>
-  <button className="dock-btn upload">＋</button>
-  <button className="dock-btn">💬</button>
-  <button className="dock-btn">⚙️</button>
-</div>
 
+      <FloatingDock
+        onHome={() => console.log("Go home")}
+        onAgenda={() => console.log("Go to agenda")}
+        onUpload={() => console.log("Upload")}
+        onChat={() => console.log("Chat")}
+        onSettings={() => console.log("Settings")}
+        username="Ben"
+        avatarUrl="https://placehold.co/40x40"
+      />
     </div>
   );
 }
