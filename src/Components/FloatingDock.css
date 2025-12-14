@@ -3,20 +3,23 @@
 .dock-container {
   position: fixed;
   bottom: 22px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none; /* allows buttons inside to be clickable */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  /* remove width: 100% */
 }
 
 .floating-dock {
   pointer-events: all;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
   padding: 14px 16px;
   border-radius: 30px;
+
+  width: fit-content; /* crucial: shrink exactly to buttons */
+  max-width: 350px;
 
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px) saturate(180%);
@@ -28,6 +31,7 @@
 
   z-index: 999;
 }
+
 
 /* Light mode */
 html.light .floating-dock {
