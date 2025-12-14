@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FloatingDock from "./components/FloatingDock";
+import FloatingDock from "./Components/FloatingDock";
 import "./App.css";
 
 function App() {
