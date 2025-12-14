@@ -1,22 +1,23 @@
-/* Global */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+html {
   transition: background-color 0.4s, color 0.4s;
 }
 
-/* Modes */
-body.dark {
+html.dark {
   background: #000;
   color: #fff;
 }
 
-body.light {
+html.light {
   background: #fff;
   color: #000;
 }
 
-/* Layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App layout */
 .app {
   min-height: 100vh;
   display: flex;
@@ -26,18 +27,7 @@ body.light {
   text-align: center;
 }
 
-/* Text */
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
-
-/* Toggle button */
+/* Toggle */
 .mode-toggle {
   position: fixed;
   top: 16px;
@@ -50,13 +40,8 @@ p {
   font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  transition: transform 0.2s, background 0.3s;
 }
 
-body.light .mode-toggle {
+html.light .mode-toggle {
   background: rgba(0, 0, 0, 0.15);
-}
-
-.mode-toggle:hover {
-  transform: scale(1.1);
 }
