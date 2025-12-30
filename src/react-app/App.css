@@ -1,47 +1,91 @@
-html {
-  transition: background-color 0.4s, color 0.4s;
+/* App.css */
+
+/* Global font and background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-html.dark {
-  background: #000;
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #FF0000;
   color: #fff;
 }
 
-html.light {
-  background: #fff;
-  color: #000;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* App layout */
-.app {
-  min-height: 100vh;
+/* Header title + icon */
+header .logo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-/* Toggle */
-.mode-toggle {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
+  font-weight: bold;
   font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
 }
 
-html.light .mode-toggle {
-  background: rgba(0, 0, 0, 0.15);
+header .logo .play-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  margin-right: 0.5rem;
+}
+
+/* Navigation tabs */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+  color: #FF0000;
+  cursor: pointer;
+}
+
+/* Feed preview / video cards */
+.feed-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.feed-card {
+  width: 200px;
+  height: 120px;
+  background-color: #eee;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Play icon overlay in feed cards */
+.feed-card .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #FF0000;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* CTA Button */
+.cta-button {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.cta-button button {
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
 }
